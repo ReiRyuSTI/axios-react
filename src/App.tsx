@@ -7,20 +7,9 @@ function App() {
   console.log(data);
 
   return (
-    <div className="App">
-      {data}
-      <header className="App-header">
-        <p className="text-red-500">
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link test"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="App relative">
+      <header className="flex items-center justify-center w-full h-10 bg-gray-500 text-white">
+        {data}
       </header>
       <RouterConfig />
     </div>

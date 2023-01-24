@@ -10,6 +10,11 @@ module.exports = {
   devtool: "inline-source-map",
   devServer: {
     static: "./build",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers":
+        "Origin, X-Requested-With, Content-Type, Accept",
+    },
     port: 3000,
   },
   target: "web",

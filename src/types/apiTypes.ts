@@ -1,1 +1,1 @@
-export type azureUserType = {};
+export type testType = { id: number; text: string; done: boolean };
