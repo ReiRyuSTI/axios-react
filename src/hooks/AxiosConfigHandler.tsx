@@ -24,10 +24,9 @@ export const AxiosErrorHandler = ({ children }: Props) => {
       },
       (error: AxiosError) => {
         if (!error.response) {
-          console.error("error", error);
           switch (error.code) {
             case "ERR_NETWORK":
-              setServerErrorFlag(true);
+              // setServerErrorFlag(true);
               break;
             default:
               break;
@@ -39,7 +38,7 @@ export const AxiosErrorHandler = ({ children }: Props) => {
           case 403:
           case 404:
           case 500:
-            setApiErrorFlag(true);
+            // setApiErrorFlag(true);
             break;
           default:
             console.error("response error", error);

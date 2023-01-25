@@ -1,10 +1,21 @@
+import { AxiosResponse } from "axios";
 import { useCallback } from "react";
 import { testType } from "types/apiTypes";
 import { axiosClient } from "./AxiosConfigHandler";
 
 export const useTestApi = () => {
+  const getTestDataBase_TEST = useCallback(async () => {
+    const result = axiosClient
+      .get("/test")
+      .then(
+        (value: AxiosResponse<{ testDataBase: testType[] }>) =>
+          value.data.testDataBase
+      );
+    return result;
+  }, [axiosClient]);
   const getTestDataBase = useCallback(async () => {
     const result = axiosClient.get("/test");
+
     return result;
   }, [axiosClient]);
 
@@ -39,6 +50,7 @@ export const useTestApi = () => {
   );
 
   return {
+    getTestDataBase_TEST,
     getTestDataBase,
     getTestData,
     postTestData,
